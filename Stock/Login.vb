@@ -26,7 +26,7 @@ Public Class Login
                         lbTentativas.Text = "Tentativas restantes: " & cont
                     Else
                         MessageBox.Show("Tentativas excedidas! Digite os últimos 3 dígitos do seu CPF!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                        ' EM DÚVIDA... TIRAR DE VEZ OU COLOCAR APÓS O LOGIN?
+
 
 
                     End If
