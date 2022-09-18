@@ -7,35 +7,25 @@ Public Class Login
 
             Try
                 connection()
-                cmd = New NpgsqlCommand("SELECT login,senha FROM tb_usuarios WHERE login= '" & Trim(txtUser.Text) & "' AND senha='" & Trim(txtPassword.Text) & "'", con)
+                cmd = New NpgsqlCommand("SELECT login,senha,cpf FROM tb_usuarios WHERE login= '" & Trim(txtUser.Text) & "' AND senha='" & Trim(txtPassword.Text) & "'", con)
                 Dim dr As NpgsqlDataReader = cmd.ExecuteReader()
 
                 If dr.HasRows Then ' Se tem linhas
-                    'MessageBox.Show("TEM DADOS!")
+                    dr.Read()
                     strUser_ = txtUser.Text
+                    strcpf_ = dr.Item("cpf") ' Para verificação após o login
+
                     Clear()
                     Me.Hide()
-                    Home.Show()
+                    frmHome.Show()
                 Else
-
-                    If cont > 1 Then
-                        MessageBox.Show("Credenciais incorretas!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                        Clear()
-                        cont -= 1
-                        lbTentativas.Visible = True
-                        lbTentativas.Text = "Tentativas restantes: " & cont
-                    Else
-                        MessageBox.Show("Tentativas excedidas! Digite os últimos 3 dígitos do seu CPF!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-
-
-                    End If
+                    MessageBox.Show("Credenciais incorretas!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Clear()
                 End If
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-
-
+            con.Close()
 
         Else
             MessageBox.Show("Preencha as Credenciais!", "Aviso:", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -46,13 +36,13 @@ Public Class Login
         If e.KeyCode = Keys.Enter Then btnSubmit.PerformClick()
     End Sub
 
-    Public Sub ChecaCpf()
-
-    End Sub
-
     Public Sub Clear()
         txtUser.Clear()
         txtPassword.Clear()
         txtUser.Focus()
+    End Sub
+
+    Private Sub txtUser_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUser.KeyDown
+        If e.KeyCode = Keys.Enter Then txtPassword.Focus()
     End Sub
 End Class

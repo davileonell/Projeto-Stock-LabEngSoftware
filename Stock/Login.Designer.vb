@@ -27,7 +27,6 @@ Partial Class Login
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.lbUser = New System.Windows.Forms.Label()
         Me.lbPass = New System.Windows.Forms.Label()
-        Me.lbTentativas = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnSubmit
@@ -77,25 +76,12 @@ Partial Class Login
         Me.lbPass.TabIndex = 4
         Me.lbPass.Text = "Password:"
         '
-        'lbTentativas
-        '
-        Me.lbTentativas.AutoSize = True
-        Me.lbTentativas.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.lbTentativas.ForeColor = System.Drawing.Color.Red
-        Me.lbTentativas.Location = New System.Drawing.Point(118, 96)
-        Me.lbTentativas.Name = "lbTentativas"
-        Me.lbTentativas.Size = New System.Drawing.Size(166, 20)
-        Me.lbTentativas.TabIndex = 5
-        Me.lbTentativas.Text = "Tentativas restantes: x"
-        Me.lbTentativas.Visible = False
-        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(467, 125)
-        Me.Controls.Add(Me.lbTentativas)
+        Me.ClientSize = New System.Drawing.Size(467, 111)
         Me.Controls.Add(Me.lbPass)
         Me.Controls.Add(Me.lbUser)
         Me.Controls.Add(Me.txtPassword)
@@ -119,5 +105,4 @@ Partial Class Login
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents lbUser As Label
     Friend WithEvents lbPass As Label
-    Friend WithEvents lbTentativas As Label
 End Class
