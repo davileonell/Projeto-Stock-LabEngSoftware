@@ -36,40 +36,42 @@ Public Class frmCadastroFuncionario
         End If
     End Sub
     Private Sub btnSaveInfo_Click(sender As Object, e As EventArgs) Handles btnSaveInfo.Click
-        If txtID.Text = "" Then ' INSERT
-            Try
-                Connection()
-                cmd = New NpgsqlCommand("INSERT INTO tb_usuarios (nome,login,senha,grupo,cpf) VALUES ('" & Trim(txtNome.Text) &
-                                                                                                   "','" & Trim(txtLogin.Text) &
-                                                                                                   "','" & Trim(txtPassword.Text) &
-                                                                                                   "','" & Trim(cmbGrupo.Text) &
-                                                                                                   "','" & Trim(mtxCPF.Text) & "')", con)
-                cmd.ExecuteNonQuery()
-                MessageBox.Show("Usuário cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                CarregarDados()
-            Catch ex As Exception
-                MessageBox.Show("Preencha todas as informações!" & ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                con.Close()
-            End Try
+        If CamposVazios() = False Then
+            If txtID.Text = "" Then ' INSERT
+                Try
+                    Connection()
+                    cmd = New NpgsqlCommand("INSERT INTO tb_usuarios (nome,login,senha,grupo,cpf) VALUES ('" & Trim(txtNome.Text) &
+                                                                                                       "','" & Trim(txtLogin.Text) &
+                                                                                                       "','" & Trim(txtPassword.Text) &
+                                                                                                       "','" & Trim(cmbGrupo.Text) &
+                                                                                                       "','" & Trim(mtxCPF.Text) & "')", con)
+                    cmd.ExecuteNonQuery()
+                    MessageBox.Show("Usuário cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    CarregarDados()
+                Catch ex As Exception
+                    MessageBox.Show("Preencha todas as informações!" & ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Finally
+                    con.Close()
+                End Try
 
 
-        Else ' UPDATE
+            Else ' UPDATE
 
-            Try
-                Connection()
-                cmd = New NpgsqlCommand("UPDATE tb_usuarios set nome='" & txtNome.Text &
-                                                             "',login='" & txtLogin.Text &
-                                                             "',senha='" & txtPassword.Text &
-                                                             "',grupo='" & cmbGrupo.Text &
-                                                             "',cpf='" & mtxCPF.Text & "' WHERE id=" & txtID.Text, con)
-                cmd.ExecuteNonQuery()
-                MessageBox.Show("Usuário atualizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                CarregarDados()
-            Catch ex As Exception
-            Finally
-                con.Close()
-            End Try
+                Try
+                    Connection()
+                    cmd = New NpgsqlCommand("UPDATE tb_usuarios set nome='" & txtNome.Text &
+                                                                 "',login='" & txtLogin.Text &
+                                                                 "',senha='" & txtPassword.Text &
+                                                                 "',grupo='" & cmbGrupo.Text &
+                                                                 "',cpf='" & mtxCPF.Text & "' WHERE id=" & txtID.Text, con)
+                    cmd.ExecuteNonQuery()
+                    MessageBox.Show("Usuário atualizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    CarregarDados()
+                Catch ex As Exception
+                Finally
+                    con.Close()
+                End Try
+            End If
         End If
     End Sub
 
@@ -116,6 +118,15 @@ Public Class frmCadastroFuncionario
             dr.Close()
         End Try
     End Sub
+
+    Public Function CamposVazios() As Boolean
+        If txtNome.Text = "" Or mtxCPF.Text.Length < 14 Or txtLogin.Text = "" Or txtPassword.Text = "" Or cmbGrupo.Text = "" Then
+            MessageBox.Show("Preencha todos os campos!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 
     Private Sub btnViewPassword_Click(sender As Object, e As EventArgs) Handles btnViewPassword.Click
         If txtPassword.UseSystemPasswordChar = True Then

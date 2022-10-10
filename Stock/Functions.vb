@@ -14,7 +14,4 @@
         If IsNumeric(e.KeyChar) Then e.Handled = True
     End Sub
 
-
-
-
 End Module

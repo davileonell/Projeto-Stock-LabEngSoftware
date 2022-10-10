@@ -10,19 +10,7 @@ Public Class frmHome
 
 
 
-
-
-
-
-
     End Sub
-
-
-
-
-    'If IsFormOpen("frmChecaCpf") = False Then
-    '    Call New frmChecaCpf() With {.MdiParent = Me}.Show()
-    'End If
 
     Private Sub CadastrarFuncionárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CadastrarFuncionárioToolStripMenuItem.Click
         If IsFormOpen("frmCadastroFuncionario") = False Then
