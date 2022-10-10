@@ -7,13 +7,14 @@ Public Class Login
 
             Try
                 connection()
-                cmd = New NpgsqlCommand("SELECT login,senha,cpf FROM tb_usuarios WHERE login= '" & Trim(txtUser.Text) & "' AND senha='" & Trim(txtPassword.Text) & "'", con)
+                cmd = New NpgsqlCommand("SELECT login,senha,cpf,grupo FROM tb_usuarios WHERE login= '" & Trim(txtUser.Text) & "' AND senha='" & Trim(txtPassword.Text) & "'", con)
                 Dim dr As NpgsqlDataReader = cmd.ExecuteReader()
 
                 If dr.HasRows Then ' Se tem linhas
                     dr.Read()
                     strUser_ = txtUser.Text
-                    strcpf_ = dr.Item("cpf") ' Para verificação após o login
+                    strCpf_ = dr.Item("cpf") ' Para verificação após o login
+                    strGrupo_ = dr.Item("grupo") ' Controle de acesso
 
                     Clear()
                     Me.Hide()
