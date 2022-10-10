@@ -54,7 +54,6 @@ Public Class frmCadastroFuncionario
                     con.Close()
                 End Try
 
-
             Else ' UPDATE
 
                 Try
@@ -174,13 +173,6 @@ Public Class frmCadastroFuncionario
         mtxCPF.Clear()
         cmbGrupo.Text = ""
         txtID.Clear()
-        btnSaveInfo.Enabled = False
-    End Sub
-
-    Private Sub frmCadastroFuncionario_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
-        If txtNome.Text IsNot "" And txtLogin.Text IsNot "" And txtPassword.Text Is "" And mtxCPF.Text IsNot "" And cmbGrupo.Text IsNot "" Then
-            btnSaveInfo.Enabled = True
-        End If
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
