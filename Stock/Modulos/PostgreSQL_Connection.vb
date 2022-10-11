@@ -5,6 +5,8 @@ Module PostgreSQL_Connection
     Public con As NpgsqlConnection
     Public cmd As NpgsqlCommand
     Public dr As NpgsqlDataReader
+    Public da As NpgsqlDataAdapter
+    Public dt As DataTable
     Public strsql As String = ""
 
     Dim host As String = "Host=ec2-3-214-2-141.compute-1.amazonaws.com;"

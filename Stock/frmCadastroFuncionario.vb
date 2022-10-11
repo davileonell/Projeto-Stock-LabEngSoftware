@@ -176,6 +176,28 @@ Public Class frmCadastroFuncionario
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        frmBuscarUsuario.ShowDialog()
+        Dim ofrmBuscarUsuario As New frmBuscarUsuario
+        ofrmBuscarUsuario.ShowDialog()
+
+        Try
+            Connection()
+            cmd = New NpgsqlCommand("SELECT * FROM tb_usuarios WHERE id=" & intIndex_, con)
+            dr = cmd.ExecuteReader
+
+            If dr.HasRows Then
+                dr.Read()
+                txtNome.Text = dr.Item("nome")
+                txtLogin.Text = dr.Item("login")
+                txtPassword.Text = dr.Item("senha")
+                mtxCPF.Text = dr.Item("cpf")
+                cmbGrupo.Text = dr.Item("grupo")
+                txtID.Text = dr.Item("id")
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            con.Close()
+            dr.Close()
+        End Try
     End Sub
 End Class
