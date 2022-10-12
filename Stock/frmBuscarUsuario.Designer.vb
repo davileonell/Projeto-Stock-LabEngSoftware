@@ -22,6 +22,7 @@ Partial Class frmBuscarUsuario
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtNome = New System.Windows.Forms.TextBox()
         Me.dvgUsuarios = New System.Windows.Forms.DataGridView()
         Me.txtID = New System.Windows.Forms.TextBox()
@@ -44,13 +45,22 @@ Partial Class frmBuscarUsuario
         Me.dvgUsuarios.AllowUserToAddRows = False
         Me.dvgUsuarios.AllowUserToDeleteRows = False
         Me.dvgUsuarios.AllowUserToResizeRows = False
-        Me.dvgUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dvgUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dvgUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.dvgUsuarios.BackgroundColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dvgUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dvgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dvgUsuarios.Location = New System.Drawing.Point(12, 53)
         Me.dvgUsuarios.MultiSelect = False
         Me.dvgUsuarios.Name = "dvgUsuarios"
+        Me.dvgUsuarios.RowHeadersVisible = False
         Me.dvgUsuarios.RowTemplate.Height = 25
         Me.dvgUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dvgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
