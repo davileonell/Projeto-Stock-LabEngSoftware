@@ -18,8 +18,17 @@ Public Class frmHome
         End If
     End Sub
 
+    Private Sub CadastrarEditarFornecedorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CadastrarEditarFornecedorToolStripMenuItem.Click
+        If IsFormOpen("frmCadastroFornecedor") = False Then
+            Call New frmCadastroFornecedor() With {.MdiParent = Me}.Show()
+        End If
+    End Sub
 
-
+    Private Sub EditarInformaçõesDoProdutoF3ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarInformaçõesDoProdutoF3ToolStripMenuItem.Click
+        If IsFormOpen("frmCadastrarProduto") = False Then
+            Call New frmCadastrarProduto() With {.MdiParent = Me}.Show()
+        End If
+    End Sub
 
 
 

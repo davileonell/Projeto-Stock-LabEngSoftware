@@ -30,6 +30,7 @@ Partial Class frmHome
         Me.ConsultarHistóricoDeMovimentaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfiguraçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastrarFuncionárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CadastrarEditarFornecedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnsHome.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,8 +66,8 @@ Partial Class frmHome
         '
         Me.EditarInformaçõesDoProdutoF3ToolStripMenuItem.ForeColor = System.Drawing.Color.Azure
         Me.EditarInformaçõesDoProdutoF3ToolStripMenuItem.Name = "EditarInformaçõesDoProdutoF3ToolStripMenuItem"
-        Me.EditarInformaçõesDoProdutoF3ToolStripMenuItem.Size = New System.Drawing.Size(236, 24)
-        Me.EditarInformaçõesDoProdutoF3ToolStripMenuItem.Text = "Editar informações do produto"
+        Me.EditarInformaçõesDoProdutoF3ToolStripMenuItem.Size = New System.Drawing.Size(219, 24)
+        Me.EditarInformaçõesDoProdutoF3ToolStripMenuItem.Text = "Editar/Cadastrar do produto"
         '
         'ConsultarHistóricoDeMovimentaçãoToolStripMenuItem
         '
@@ -77,7 +78,7 @@ Partial Class frmHome
         '
         'ConfiguraçõesToolStripMenuItem
         '
-        Me.ConfiguraçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarFuncionárioToolStripMenuItem})
+        Me.ConfiguraçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarFuncionárioToolStripMenuItem, Me.CadastrarEditarFornecedorToolStripMenuItem})
         Me.ConfiguraçõesToolStripMenuItem.ForeColor = System.Drawing.Color.Azure
         Me.ConfiguraçõesToolStripMenuItem.Name = "ConfiguraçõesToolStripMenuItem"
         Me.ConfiguraçõesToolStripMenuItem.Size = New System.Drawing.Size(121, 24)
@@ -90,6 +91,14 @@ Partial Class frmHome
         Me.CadastrarFuncionárioToolStripMenuItem.Name = "CadastrarFuncionárioToolStripMenuItem"
         Me.CadastrarFuncionárioToolStripMenuItem.Size = New System.Drawing.Size(279, 24)
         Me.CadastrarFuncionárioToolStripMenuItem.Text = "Cadastrar/Editar Funcionário"
+        '
+        'CadastrarEditarFornecedorToolStripMenuItem
+        '
+        Me.CadastrarEditarFornecedorToolStripMenuItem.BackColor = System.Drawing.Color.Navy
+        Me.CadastrarEditarFornecedorToolStripMenuItem.ForeColor = System.Drawing.Color.Azure
+        Me.CadastrarEditarFornecedorToolStripMenuItem.Name = "CadastrarEditarFornecedorToolStripMenuItem"
+        Me.CadastrarEditarFornecedorToolStripMenuItem.Size = New System.Drawing.Size(279, 24)
+        Me.CadastrarEditarFornecedorToolStripMenuItem.Text = "Cadastrar/Editar Fornecedor"
         '
         'frmHome
         '
@@ -118,4 +127,5 @@ Partial Class frmHome
     Friend WithEvents ConsultarHistóricoDeMovimentaçãoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConfiguraçõesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CadastrarFuncionárioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CadastrarEditarFornecedorToolStripMenuItem As ToolStripMenuItem
 End Class
