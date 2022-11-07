@@ -22,6 +22,7 @@ Partial Class frmCadastrarProduto
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCadastrarProduto))
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.btnSaveInfo = New System.Windows.Forms.Button()
@@ -47,8 +48,11 @@ Partial Class frmCadastrarProduto
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtDesc = New System.Windows.Forms.TextBox()
         Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.nudQtd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtID
@@ -69,6 +73,7 @@ Partial Class frmCadastrarProduto
         Me.btnSaveInfo.Size = New System.Drawing.Size(63, 45)
         Me.btnSaveInfo.TabIndex = 30
         Me.btnSaveInfo.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnSaveInfo, "Salvar")
         Me.btnSaveInfo.UseVisualStyleBackColor = False
         '
         'btnSearch
@@ -82,6 +87,7 @@ Partial Class frmCadastrarProduto
         Me.btnSearch.Size = New System.Drawing.Size(63, 45)
         Me.btnSearch.TabIndex = 29
         Me.btnSearch.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnSearch, "Buscar Produto")
         Me.btnSearch.UseVisualStyleBackColor = False
         '
         'btnExcluir
@@ -95,6 +101,7 @@ Partial Class frmCadastrarProduto
         Me.btnExcluir.Size = New System.Drawing.Size(63, 45)
         Me.btnExcluir.TabIndex = 28
         Me.btnExcluir.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnExcluir, "Excluír")
         Me.btnExcluir.UseVisualStyleBackColor = False
         '
         'btnNext
@@ -108,6 +115,7 @@ Partial Class frmCadastrarProduto
         Me.btnNext.Size = New System.Drawing.Size(63, 45)
         Me.btnNext.TabIndex = 27
         Me.btnNext.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnNext, "Próximo")
         Me.btnNext.UseVisualStyleBackColor = False
         '
         'btnBack
@@ -121,6 +129,7 @@ Partial Class frmCadastrarProduto
         Me.btnBack.Size = New System.Drawing.Size(63, 45)
         Me.btnBack.TabIndex = 26
         Me.btnBack.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnBack, "Voltar")
         Me.btnBack.UseVisualStyleBackColor = False
         '
         'btnAddProduct
@@ -134,6 +143,7 @@ Partial Class frmCadastrarProduto
         Me.btnAddProduct.Size = New System.Drawing.Size(63, 45)
         Me.btnAddProduct.TabIndex = 31
         Me.btnAddProduct.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnAddProduct, "Novo produto")
         Me.btnAddProduct.UseVisualStyleBackColor = False
         '
         'Label1
@@ -141,7 +151,7 @@ Partial Class frmCadastrarProduto
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.Azure
-        Me.Label1.Location = New System.Drawing.Point(54, 111)
+        Me.Label1.Location = New System.Drawing.Point(47, 29)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 20)
         Me.Label1.TabIndex = 33
@@ -149,7 +159,7 @@ Partial Class frmCadastrarProduto
         '
         'txtNome
         '
-        Me.txtNome.Location = New System.Drawing.Point(112, 110)
+        Me.txtNome.Location = New System.Drawing.Point(105, 28)
         Me.txtNome.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNome.MaxLength = 30
         Me.txtNome.Name = "txtNome"
@@ -161,7 +171,7 @@ Partial Class frmCadastrarProduto
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.Color.Azure
-        Me.Label2.Location = New System.Drawing.Point(247, 150)
+        Me.Label2.Location = New System.Drawing.Point(386, 68)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 20)
         Me.Label2.TabIndex = 34
@@ -170,11 +180,11 @@ Partial Class frmCadastrarProduto
         'nudQtd
         '
         Me.nudQtd.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.nudQtd.Location = New System.Drawing.Point(289, 149)
+        Me.nudQtd.Location = New System.Drawing.Point(428, 67)
         Me.nudQtd.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.nudQtd.Name = "nudQtd"
         Me.nudQtd.Size = New System.Drawing.Size(63, 23)
-        Me.nudQtd.TabIndex = 2
+        Me.nudQtd.TabIndex = 3
         Me.nudQtd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
@@ -182,7 +192,7 @@ Partial Class frmCadastrarProduto
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.Color.Azure
-        Me.Label3.Location = New System.Drawing.Point(30, 149)
+        Me.Label3.Location = New System.Drawing.Point(23, 67)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(80, 20)
         Me.Label3.TabIndex = 37
@@ -191,17 +201,17 @@ Partial Class frmCadastrarProduto
         'cmbCategoria
         '
         Me.cmbCategoria.FormattingEnabled = True
-        Me.cmbCategoria.Location = New System.Drawing.Point(112, 148)
+        Me.cmbCategoria.Location = New System.Drawing.Point(105, 66)
         Me.cmbCategoria.Name = "cmbCategoria"
-        Me.cmbCategoria.Size = New System.Drawing.Size(121, 23)
-        Me.cmbCategoria.TabIndex = 4
+        Me.cmbCategoria.Size = New System.Drawing.Size(239, 23)
+        Me.cmbCategoria.TabIndex = 2
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.Azure
-        Me.Label4.Location = New System.Drawing.Point(54, 264)
+        Me.Label4.Location = New System.Drawing.Point(54, 299)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(56, 20)
         Me.Label4.TabIndex = 40
@@ -209,19 +219,19 @@ Partial Class frmCadastrarProduto
         '
         'txtMarca
         '
-        Me.txtMarca.Location = New System.Drawing.Point(112, 263)
+        Me.txtMarca.Location = New System.Drawing.Point(112, 298)
         Me.txtMarca.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMarca.MaxLength = 30
         Me.txtMarca.Name = "txtMarca"
-        Me.txtMarca.Size = New System.Drawing.Size(316, 23)
-        Me.txtMarca.TabIndex = 5
+        Me.txtMarca.Size = New System.Drawing.Size(239, 23)
+        Me.txtMarca.TabIndex = 6
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label5.ForeColor = System.Drawing.Color.Azure
-        Me.Label5.Location = New System.Drawing.Point(44, 186)
+        Me.Label5.Location = New System.Drawing.Point(44, 221)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(66, 20)
         Me.Label5.TabIndex = 42
@@ -229,27 +239,27 @@ Partial Class frmCadastrarProduto
         '
         'txtModelo
         '
-        Me.txtModelo.Location = New System.Drawing.Point(112, 185)
+        Me.txtModelo.Location = New System.Drawing.Point(112, 220)
         Me.txtModelo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtModelo.MaxLength = 30
         Me.txtModelo.Name = "txtModelo"
         Me.txtModelo.Size = New System.Drawing.Size(316, 23)
-        Me.txtModelo.TabIndex = 6
+        Me.txtModelo.TabIndex = 4
         '
         'cmbFornecedor
         '
         Me.cmbFornecedor.FormattingEnabled = True
-        Me.cmbFornecedor.Location = New System.Drawing.Point(112, 224)
+        Me.cmbFornecedor.Location = New System.Drawing.Point(112, 259)
         Me.cmbFornecedor.Name = "cmbFornecedor"
         Me.cmbFornecedor.Size = New System.Drawing.Size(316, 23)
-        Me.cmbFornecedor.TabIndex = 7
+        Me.cmbFornecedor.TabIndex = 5
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label6.ForeColor = System.Drawing.Color.Azure
-        Me.Label6.Location = New System.Drawing.Point(16, 225)
+        Me.Label6.Location = New System.Drawing.Point(16, 260)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(93, 20)
         Me.Label6.TabIndex = 43
@@ -260,27 +270,27 @@ Partial Class frmCadastrarProduto
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label7.ForeColor = System.Drawing.Color.Azure
-        Me.Label7.Location = New System.Drawing.Point(363, 150)
+        Me.Label7.Location = New System.Drawing.Point(364, 300)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(84, 20)
+        Me.Label7.Size = New System.Drawing.Size(69, 20)
         Me.Label7.TabIndex = 46
-        Me.Label7.Text = "Valor unid:"
+        Me.Label7.Text = "Val unid:"
         '
         'txtVal
         '
-        Me.txtVal.Location = New System.Drawing.Point(449, 149)
+        Me.txtVal.Location = New System.Drawing.Point(435, 299)
         Me.txtVal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtVal.MaxLength = 30
         Me.txtVal.Name = "txtVal"
-        Me.txtVal.Size = New System.Drawing.Size(107, 23)
-        Me.txtVal.TabIndex = 3
+        Me.txtVal.Size = New System.Drawing.Size(85, 23)
+        Me.txtVal.TabIndex = 7
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label8.ForeColor = System.Drawing.Color.Azure
-        Me.Label8.Location = New System.Drawing.Point(29, 306)
+        Me.Label8.Location = New System.Drawing.Point(29, 341)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(80, 20)
         Me.Label8.TabIndex = 48
@@ -288,9 +298,9 @@ Partial Class frmCadastrarProduto
         '
         'txtDesc
         '
-        Me.txtDesc.Location = New System.Drawing.Point(112, 304)
+        Me.txtDesc.Location = New System.Drawing.Point(112, 339)
         Me.txtDesc.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtDesc.MaxLength = 30
+        Me.txtDesc.MaxLength = 100
         Me.txtDesc.Multiline = True
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.Size = New System.Drawing.Size(228, 145)
@@ -300,19 +310,36 @@ Partial Class frmCadastrarProduto
         '
         Me.picLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
-        Me.picLogo.Location = New System.Drawing.Point(445, 358)
+        Me.picLogo.Location = New System.Drawing.Point(445, 391)
         Me.picLogo.Name = "picLogo"
         Me.picLogo.Size = New System.Drawing.Size(111, 91)
         Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picLogo.TabIndex = 49
         Me.picLogo.TabStop = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txtNome)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.nudQtd)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.cmbCategoria)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Azure
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 90)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(544, 111)
+        Me.GroupBox1.TabIndex = 50
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Informações Obrigatórias"
+        '
         'frmCadastrarProduto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Highlight
-        Me.ClientSize = New System.Drawing.Size(570, 463)
+        Me.ClientSize = New System.Drawing.Size(570, 496)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.picLogo)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtDesc)
@@ -324,12 +351,6 @@ Partial Class frmCadastrarProduto
         Me.Controls.Add(Me.txtModelo)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtMarca)
-        Me.Controls.Add(Me.cmbCategoria)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.nudQtd)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtNome)
         Me.Controls.Add(Me.btnAddProduct)
         Me.Controls.Add(Me.btnSaveInfo)
         Me.Controls.Add(Me.btnSearch)
@@ -347,6 +368,8 @@ Partial Class frmCadastrarProduto
         Me.Text = "Cadastrar/Editar Produtos"
         CType(Me.nudQtd, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -376,4 +399,6 @@ Partial Class frmCadastrarProduto
     Friend WithEvents Label8 As Label
     Friend WithEvents txtDesc As TextBox
     Friend WithEvents picLogo As PictureBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

@@ -22,6 +22,7 @@ Partial Class frmCadastroFornecedor
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCadastroFornecedor))
         Me.mtxCNPJ = New System.Windows.Forms.MaskedTextBox()
         Me.txtNome = New System.Windows.Forms.TextBox()
@@ -34,6 +35,7 @@ Partial Class frmCadastroFornecedor
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnSaveInfo = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'mtxCNPJ
@@ -97,6 +99,7 @@ Partial Class frmCadastroFornecedor
         Me.btnSearch.Size = New System.Drawing.Size(63, 45)
         Me.btnSearch.TabIndex = 24
         Me.btnSearch.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnSearch, "Buscar fornecedor")
         Me.btnSearch.UseVisualStyleBackColor = False
         '
         'btnAddUser
@@ -110,6 +113,7 @@ Partial Class frmCadastroFornecedor
         Me.btnAddUser.Size = New System.Drawing.Size(63, 45)
         Me.btnAddUser.TabIndex = 23
         Me.btnAddUser.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnAddUser, "Novo fornecedor")
         Me.btnAddUser.UseVisualStyleBackColor = False
         '
         'btnExcluir
@@ -123,6 +127,7 @@ Partial Class frmCadastroFornecedor
         Me.btnExcluir.Size = New System.Drawing.Size(63, 45)
         Me.btnExcluir.TabIndex = 22
         Me.btnExcluir.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnExcluir, "Excluír")
         Me.btnExcluir.UseVisualStyleBackColor = False
         '
         'btnNext
@@ -136,6 +141,7 @@ Partial Class frmCadastroFornecedor
         Me.btnNext.Size = New System.Drawing.Size(63, 45)
         Me.btnNext.TabIndex = 21
         Me.btnNext.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnNext, "Próximo")
         Me.btnNext.UseVisualStyleBackColor = False
         '
         'btnBack
@@ -149,6 +155,7 @@ Partial Class frmCadastroFornecedor
         Me.btnBack.Size = New System.Drawing.Size(63, 45)
         Me.btnBack.TabIndex = 20
         Me.btnBack.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnBack, "Voltar")
         Me.btnBack.UseVisualStyleBackColor = False
         '
         'btnSaveInfo
@@ -162,6 +169,7 @@ Partial Class frmCadastroFornecedor
         Me.btnSaveInfo.Size = New System.Drawing.Size(63, 45)
         Me.btnSaveInfo.TabIndex = 25
         Me.btnSaveInfo.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btnSaveInfo, "Salvar")
         Me.btnSaveInfo.UseVisualStyleBackColor = False
         '
         'frmCadastroFornecedor
@@ -205,4 +213,5 @@ Partial Class frmCadastroFornecedor
     Friend WithEvents btnNext As Button
     Friend WithEvents btnBack As Button
     Friend WithEvents btnSaveInfo As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

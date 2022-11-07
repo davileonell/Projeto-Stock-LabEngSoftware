@@ -10,6 +10,7 @@ Public Class frmHome
 
 
 
+
     End Sub
 
     Private Sub CadastrarFuncionárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CadastrarFuncionárioToolStripMenuItem.Click
@@ -27,6 +28,12 @@ Public Class frmHome
     Private Sub EditarInformaçõesDoProdutoF3ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarInformaçõesDoProdutoF3ToolStripMenuItem.Click
         If IsFormOpen("frmCadastrarProduto") = False Then
             Call New frmCadastrarProduto() With {.MdiParent = Me}.Show()
+        End If
+    End Sub
+
+    Private Sub CadastrarEditarCategoriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CadastrarEditarCategoriaToolStripMenuItem.Click
+        If IsFormOpen("frmCadastrarCategoria") = False Then
+            Call New frmCadastrarCategoria() With {.MdiParent = Me}.Show()
         End If
     End Sub
 
@@ -109,4 +116,6 @@ Public Class frmHome
     Private Sub Home_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Login.Close()
     End Sub
+
+
 End Class

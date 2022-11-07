@@ -31,6 +31,7 @@ Partial Class frmHome
         Me.ConfiguraçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastrarFuncionárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastrarEditarFornecedorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CadastrarEditarCategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnsHome.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -78,7 +79,7 @@ Partial Class frmHome
         '
         'ConfiguraçõesToolStripMenuItem
         '
-        Me.ConfiguraçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarFuncionárioToolStripMenuItem, Me.CadastrarEditarFornecedorToolStripMenuItem})
+        Me.ConfiguraçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrarFuncionárioToolStripMenuItem, Me.CadastrarEditarFornecedorToolStripMenuItem, Me.CadastrarEditarCategoriaToolStripMenuItem})
         Me.ConfiguraçõesToolStripMenuItem.ForeColor = System.Drawing.Color.Azure
         Me.ConfiguraçõesToolStripMenuItem.Name = "ConfiguraçõesToolStripMenuItem"
         Me.ConfiguraçõesToolStripMenuItem.Size = New System.Drawing.Size(121, 24)
@@ -99,6 +100,14 @@ Partial Class frmHome
         Me.CadastrarEditarFornecedorToolStripMenuItem.Name = "CadastrarEditarFornecedorToolStripMenuItem"
         Me.CadastrarEditarFornecedorToolStripMenuItem.Size = New System.Drawing.Size(279, 24)
         Me.CadastrarEditarFornecedorToolStripMenuItem.Text = "Cadastrar/Editar Fornecedor"
+        '
+        'CadastrarEditarCategoriaToolStripMenuItem
+        '
+        Me.CadastrarEditarCategoriaToolStripMenuItem.BackColor = System.Drawing.Color.Navy
+        Me.CadastrarEditarCategoriaToolStripMenuItem.ForeColor = System.Drawing.Color.Azure
+        Me.CadastrarEditarCategoriaToolStripMenuItem.Name = "CadastrarEditarCategoriaToolStripMenuItem"
+        Me.CadastrarEditarCategoriaToolStripMenuItem.Size = New System.Drawing.Size(279, 24)
+        Me.CadastrarEditarCategoriaToolStripMenuItem.Text = "Cadastrar/Editar Categoria"
         '
         'frmHome
         '
@@ -128,4 +137,5 @@ Partial Class frmHome
     Friend WithEvents ConfiguraçõesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CadastrarFuncionárioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CadastrarEditarFornecedorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CadastrarEditarCategoriaToolStripMenuItem As ToolStripMenuItem
 End Class
