@@ -75,7 +75,7 @@ Public Class frmCadastrarProduto
                                                                         modelo= '" & Trim(txtModelo.Text) & "',
                                                                     ds_produto= '" & Trim(txtDesc.Text) & "',
                                                                  nm_fornecedor= '" & cmbFornecedor.Text & "',
-                                                                    vl_produto= " & val, con)
+                                                                    vl_produto= " & val & " WHERE produto_id=" & txtID.Text, con)
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Produto atualizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     CarregarDados()
