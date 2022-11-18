@@ -127,17 +127,6 @@ Public Class frmCadastroFuncionario
         End If
     End Function
 
-    Private Sub btnViewPassword_Click(sender As Object, e As EventArgs) Handles btnViewPassword.Click
-        If txtPassword.UseSystemPasswordChar = True Then
-            txtPassword.UseSystemPasswordChar = False
-            txtPassword.PasswordChar = ""
-            btnViewPassword.BackgroundImage = My.Resources.monkey_closed_mouth
-        Else
-            txtPassword.UseSystemPasswordChar = True
-            txtPassword.PasswordChar = "•"
-            btnViewPassword.BackgroundImage = My.Resources.monkey_closed_eyes
-        End If
-    End Sub
     Private Sub txtCPF_KeyPress(sender As Object, e As KeyPressEventArgs)
         JustNumbers(sender, e)
     End Sub
@@ -159,11 +148,15 @@ Public Class frmCadastroFuncionario
     End Sub
 
     Private Sub btnViewPassword_MouseHover(sender As Object, e As EventArgs) Handles btnViewPassword.MouseHover
-        If txtPassword.UseSystemPasswordChar = True Then
-            ToolTip1.SetToolTip(Me.btnViewPassword, "Ver senha")
-        Else
-            ToolTip1.SetToolTip(Me.btnViewPassword, "Ocultar senha")
-        End If
+        txtPassword.UseSystemPasswordChar = False
+        txtPassword.PasswordChar = ""
+        btnViewPassword.BackgroundImage = My.Resources.monkey_closed_mouth
+    End Sub
+
+    Private Sub btnViewPassword_MouseLeave(sender As Object, e As EventArgs) Handles btnViewPassword.MouseLeave
+        txtPassword.UseSystemPasswordChar = True
+        txtPassword.PasswordChar = "•"
+        btnViewPassword.BackgroundImage = My.Resources.monkey_closed_eyes
     End Sub
 
     Private Sub btnAddUser_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
@@ -199,5 +192,17 @@ Public Class frmCadastroFuncionario
             con.Close()
             dr.Close()
         End Try
+    End Sub
+
+    Private Sub txtLogin_TextChanged(sender As Object, e As EventArgs) Handles txtLogin.TextChanged
+        txtLogin.Text = CancApostofro(txtLogin)
+    End Sub
+
+    Private Sub txtNome_TextChanged(sender As Object, e As EventArgs) Handles txtNome.TextChanged
+        txtNome.Text = CancApostofro(txtNome)
+    End Sub
+
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+        txtPassword.Text = CancApostofro(txtPassword)
     End Sub
 End Class

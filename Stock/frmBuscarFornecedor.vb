@@ -44,4 +44,8 @@ Public Class frmBuscarFornecedor
 
         Me.Close()
     End Sub
+
+    Private Sub txtNome_TextChanged(sender As Object, e As EventArgs) Handles txtNome.TextChanged
+        txtNome.Text = CancApostofro(txtNome)
+    End Sub
 End Class

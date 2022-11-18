@@ -40,4 +40,8 @@ Public Class frmBuscarProduto
     Private Sub txtNome_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNome.KeyDown
         If e.KeyCode = Keys.Enter Then btnBuscar.PerformClick()
     End Sub
+
+    Private Sub txtNome_TextChanged(sender As Object, e As EventArgs) Handles txtNome.TextChanged
+        txtNome.Text = CancApostofro(txtNome)
+    End Sub
 End Class

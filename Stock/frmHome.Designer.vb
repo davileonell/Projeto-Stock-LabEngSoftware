@@ -25,7 +25,6 @@ Partial Class frmHome
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHome))
         Me.mnsHome = New System.Windows.Forms.MenuStrip()
         Me.ConsultarProdutosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SolicitarProdutoF3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarInformaçõesDoProdutoF3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarHistóricoDeMovimentaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfiguraçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,7 +39,7 @@ Partial Class frmHome
         Me.mnsHome.BackColor = System.Drawing.Color.Navy
         Me.mnsHome.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.mnsHome.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.mnsHome.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultarProdutosToolStripMenuItem, Me.SolicitarProdutoF3ToolStripMenuItem, Me.EditarInformaçõesDoProdutoF3ToolStripMenuItem, Me.ConsultarHistóricoDeMovimentaçãoToolStripMenuItem, Me.ConfiguraçõesToolStripMenuItem})
+        Me.mnsHome.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultarProdutosToolStripMenuItem, Me.EditarInformaçõesDoProdutoF3ToolStripMenuItem, Me.ConsultarHistóricoDeMovimentaçãoToolStripMenuItem, Me.ConfiguraçõesToolStripMenuItem})
         Me.mnsHome.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.mnsHome.Location = New System.Drawing.Point(0, 0)
         Me.mnsHome.Name = "mnsHome"
@@ -55,13 +54,6 @@ Partial Class frmHome
         Me.ConsultarProdutosToolStripMenuItem.Name = "ConsultarProdutosToolStripMenuItem"
         Me.ConsultarProdutosToolStripMenuItem.Size = New System.Drawing.Size(156, 24)
         Me.ConsultarProdutosToolStripMenuItem.Text = "Consultar produtos"
-        '
-        'SolicitarProdutoF3ToolStripMenuItem
-        '
-        Me.SolicitarProdutoF3ToolStripMenuItem.ForeColor = System.Drawing.Color.Azure
-        Me.SolicitarProdutoF3ToolStripMenuItem.Name = "SolicitarProdutoF3ToolStripMenuItem"
-        Me.SolicitarProdutoF3ToolStripMenuItem.Size = New System.Drawing.Size(138, 24)
-        Me.SolicitarProdutoF3ToolStripMenuItem.Text = "Solicitar Produto"
         '
         'EditarInformaçõesDoProdutoF3ToolStripMenuItem
         '
@@ -131,7 +123,6 @@ Partial Class frmHome
 
     Friend WithEvents mnsHome As MenuStrip
     Friend WithEvents ConsultarProdutosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SolicitarProdutoF3ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditarInformaçõesDoProdutoF3ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConsultarHistóricoDeMovimentaçãoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConfiguraçõesToolStripMenuItem As ToolStripMenuItem

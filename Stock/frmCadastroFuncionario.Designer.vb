@@ -181,6 +181,7 @@ Partial Class frmCadastroFuncionario
         Me.btnViewPassword.BackColor = System.Drawing.SystemColors.Control
         Me.btnViewPassword.BackgroundImage = Global.Stock.My.Resources.Resources.monkey_closed_eyes
         Me.btnViewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnViewPassword.Cursor = System.Windows.Forms.Cursors.Help
         Me.btnViewPassword.Location = New System.Drawing.Point(332, 142)
         Me.btnViewPassword.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnViewPassword.Name = "btnViewPassword"

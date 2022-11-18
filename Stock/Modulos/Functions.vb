@@ -14,4 +14,16 @@
         If IsNumeric(e.KeyChar) Then e.Handled = True
     End Sub
 
+    Public Function CancApostofro(txt As TextBox)
+        SendKeys.Send("{END}")
+        Return txt.Text.Replace("'", "´")
+    End Function
+
+    Public Function JustMoney(ByVal Keyascii As Short) As Short
+        If InStr("1234567890,.", Chr(Keyascii)) = 0 Then
+            JustMoney = 0
+        Else
+            JustMoney = Keyascii
+        End If
+    End Function
 End Module

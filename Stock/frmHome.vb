@@ -68,20 +68,12 @@ Public Class frmHome
         ConsultarProdutosToolStripMenuItem.ForeColor = Color.Azure
     End Sub
 
-    Private Sub SolicitarProdutoF3ToolStripMenuItem_MouseEnter(sender As Object, e As EventArgs) Handles SolicitarProdutoF3ToolStripMenuItem.MouseEnter
-        SolicitarProdutoF3ToolStripMenuItem.ForeColor = Color.Black
-    End Sub
-    Private Sub SolicitarProdutoF3ToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles SolicitarProdutoF3ToolStripMenuItem.MouseLeave
-        SolicitarProdutoF3ToolStripMenuItem.ForeColor = Color.Azure
-    End Sub
-
     Private Sub EditarInformaçõesDoProdutoF3ToolStripMenuItem_MouseEnter(sender As Object, e As EventArgs) Handles EditarInformaçõesDoProdutoF3ToolStripMenuItem.MouseEnter
         EditarInformaçõesDoProdutoF3ToolStripMenuItem.ForeColor = Color.Black
     End Sub
     Private Sub EditarInformaçõesDoProdutoF3ToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles EditarInformaçõesDoProdutoF3ToolStripMenuItem.MouseLeave
         EditarInformaçõesDoProdutoF3ToolStripMenuItem.ForeColor = Color.Azure
     End Sub
-
 
     Private Sub CadastrarFuncionárioToolStripMenuItem_MouseEnter(sender As Object, e As EventArgs) Handles CadastrarFuncionárioToolStripMenuItem.MouseEnter
         CadastrarFuncionárioToolStripMenuItem.ForeColor = Color.Black

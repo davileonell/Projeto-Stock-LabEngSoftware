@@ -20,4 +20,8 @@ Public Class frmChecaCpf
             Login.Close()
         End If
     End Sub
+
+    Private Sub frmChecaCpf_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SendKeys.Send("{HOME}")
+    End Sub
 End Class

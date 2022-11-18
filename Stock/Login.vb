@@ -46,4 +46,12 @@ Public Class Login
     Private Sub txtUser_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUser.KeyDown
         If e.KeyCode = Keys.Enter Then txtPassword.Focus()
     End Sub
+
+    Private Sub txtUser_TextChanged(sender As Object, e As EventArgs) Handles txtUser.TextChanged
+        txtUser.Text = CancApostofro(txtUser)
+    End Sub
+
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+        txtPassword.Text = CancApostofro(txtPassword)
+    End Sub
 End Class

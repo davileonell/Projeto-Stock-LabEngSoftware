@@ -115,4 +115,9 @@ Public Class frmCadastrarCategoria
             dr.Close()
         End Try
     End Sub
+
+    Private Sub cmbCategoria_TextChanged(sender As Object, e As EventArgs) Handles cmbCategoria.TextChanged
+        cmbCategoria.Text = cmbCategoria.Text.Replace("'", "´")
+        SendKeys.Send("{END}")
+    End Sub
 End Class
