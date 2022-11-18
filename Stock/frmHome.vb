@@ -37,7 +37,11 @@ Public Class frmHome
         End If
     End Sub
 
-
+    Private Sub ConsultarProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultarProdutosToolStripMenuItem.Click
+        If IsFormOpen("frmConsultarProdutos") = False Then
+            Call New frmConsultarProdutos() With {.MdiParent = Me}.Show()
+        End If
+    End Sub
 
 
 
@@ -108,6 +112,4 @@ Public Class frmHome
     Private Sub Home_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Login.Close()
     End Sub
-
-
 End Class

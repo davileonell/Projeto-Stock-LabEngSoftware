@@ -217,19 +217,19 @@ Public Class frmCadastrarProduto
         e.Handled = True
     End Sub
 
-    Private Sub cmbFornecedor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbFornecedor.KeyPress
+    Private Sub cmbFornecedor_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = True
     End Sub
 
-    Private Sub txtDesc_TextChanged(sender As Object, e As EventArgs) Handles txtDesc.TextChanged
+    Private Sub txtDesc_TextChanged(sender As Object, e As EventArgs)
         txtDesc.Text = CancApostofro(txtDesc)
     End Sub
 
-    Private Sub txtMarca_TextChanged(sender As Object, e As EventArgs) Handles txtMarca.TextChanged
+    Private Sub txtMarca_TextChanged(sender As Object, e As EventArgs)
         txtMarca.Text = CancApostofro(txtMarca)
     End Sub
 
-    Private Sub txtModelo_TextChanged(sender As Object, e As EventArgs) Handles txtModelo.TextChanged
+    Private Sub txtModelo_TextChanged(sender As Object, e As EventArgs)
         txtModelo.Text = CancApostofro(txtModelo)
     End Sub
 
@@ -237,7 +237,7 @@ Public Class frmCadastrarProduto
         txtNome.Text = CancApostofro(txtNome)
     End Sub
 
-    Private Sub txtVal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtVal.KeyPress
+    Private Sub txtVal_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim keyAscii As Short = CShort(Asc(e.KeyChar))
 
         keyAscii = CShort(JustMoney(keyAscii))
@@ -245,7 +245,7 @@ Public Class frmCadastrarProduto
         If keyAscii = 0 Then e.Handled = True
     End Sub
 
-    Private Sub txtVal_KeyDown(sender As Object, e As KeyEventArgs) Handles txtVal.KeyDown
+    Private Sub txtVal_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Back Then
             If txtVal.TextLength > 0 Then
                 Dim tamanho = txtVal.TextLength

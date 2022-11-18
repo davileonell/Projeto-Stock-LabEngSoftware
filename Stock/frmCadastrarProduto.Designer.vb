@@ -37,22 +37,24 @@ Partial Class frmCadastrarProduto
         Me.nudQtd = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbCategoria = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtMarca = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtModelo = New System.Windows.Forms.TextBox()
-        Me.cmbFornecedor = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtVal = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtDesc = New System.Windows.Forms.TextBox()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtDesc = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtVal = New System.Windows.Forms.TextBox()
+        Me.cmbFornecedor = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtModelo = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtMarca = New System.Windows.Forms.TextBox()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         CType(Me.nudQtd, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtID
@@ -206,117 +208,6 @@ Partial Class frmCadastrarProduto
         Me.cmbCategoria.Size = New System.Drawing.Size(239, 23)
         Me.cmbCategoria.TabIndex = 2
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.ForeColor = System.Drawing.Color.Azure
-        Me.Label4.Location = New System.Drawing.Point(54, 299)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 20)
-        Me.Label4.TabIndex = 40
-        Me.Label4.Text = "Marca:"
-        '
-        'txtMarca
-        '
-        Me.txtMarca.Location = New System.Drawing.Point(112, 298)
-        Me.txtMarca.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtMarca.MaxLength = 30
-        Me.txtMarca.Name = "txtMarca"
-        Me.txtMarca.Size = New System.Drawing.Size(239, 23)
-        Me.txtMarca.TabIndex = 6
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.ForeColor = System.Drawing.Color.Azure
-        Me.Label5.Location = New System.Drawing.Point(44, 221)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(66, 20)
-        Me.Label5.TabIndex = 42
-        Me.Label5.Text = "Modelo:"
-        '
-        'txtModelo
-        '
-        Me.txtModelo.Location = New System.Drawing.Point(112, 220)
-        Me.txtModelo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtModelo.MaxLength = 30
-        Me.txtModelo.Name = "txtModelo"
-        Me.txtModelo.Size = New System.Drawing.Size(316, 23)
-        Me.txtModelo.TabIndex = 4
-        '
-        'cmbFornecedor
-        '
-        Me.cmbFornecedor.FormattingEnabled = True
-        Me.cmbFornecedor.Location = New System.Drawing.Point(112, 259)
-        Me.cmbFornecedor.Name = "cmbFornecedor"
-        Me.cmbFornecedor.Size = New System.Drawing.Size(316, 23)
-        Me.cmbFornecedor.TabIndex = 5
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label6.ForeColor = System.Drawing.Color.Azure
-        Me.Label6.Location = New System.Drawing.Point(16, 260)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 20)
-        Me.Label6.TabIndex = 43
-        Me.Label6.Text = "Fornecedor:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label7.ForeColor = System.Drawing.Color.Azure
-        Me.Label7.Location = New System.Drawing.Point(364, 300)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(69, 20)
-        Me.Label7.TabIndex = 46
-        Me.Label7.Text = "Val unid:"
-        '
-        'txtVal
-        '
-        Me.txtVal.Location = New System.Drawing.Point(435, 299)
-        Me.txtVal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtVal.MaxLength = 30
-        Me.txtVal.Name = "txtVal"
-        Me.txtVal.Size = New System.Drawing.Size(85, 23)
-        Me.txtVal.TabIndex = 7
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label8.ForeColor = System.Drawing.Color.Azure
-        Me.Label8.Location = New System.Drawing.Point(29, 341)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(80, 20)
-        Me.Label8.TabIndex = 48
-        Me.Label8.Text = "Descrição:"
-        '
-        'txtDesc
-        '
-        Me.txtDesc.Location = New System.Drawing.Point(112, 339)
-        Me.txtDesc.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtDesc.MaxLength = 100
-        Me.txtDesc.Multiline = True
-        Me.txtDesc.Name = "txtDesc"
-        Me.txtDesc.Size = New System.Drawing.Size(228, 145)
-        Me.txtDesc.TabIndex = 8
-        '
-        'picLogo
-        '
-        Me.picLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
-        Me.picLogo.Location = New System.Drawing.Point(445, 391)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(111, 91)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLogo.TabIndex = 49
-        Me.picLogo.TabStop = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.txtNome)
@@ -333,24 +224,144 @@ Partial Class frmCadastrarProduto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Informações Obrigatórias"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.picLogo)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.txtDesc)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.txtVal)
+        Me.GroupBox2.Controls.Add(Me.cmbFornecedor)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.txtModelo)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.txtMarca)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 207)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(544, 315)
+        Me.GroupBox2.TabIndex = 51
+        Me.GroupBox2.TabStop = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label8.ForeColor = System.Drawing.Color.Azure
+        Me.Label8.Location = New System.Drawing.Point(22, 147)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(80, 20)
+        Me.Label8.TabIndex = 58
+        Me.Label8.Text = "Descrição:"
+        '
+        'txtDesc
+        '
+        Me.txtDesc.Location = New System.Drawing.Point(105, 145)
+        Me.txtDesc.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtDesc.MaxLength = 100
+        Me.txtDesc.Multiline = True
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.Size = New System.Drawing.Size(228, 145)
+        Me.txtDesc.TabIndex = 53
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.ForeColor = System.Drawing.Color.Azure
+        Me.Label7.Location = New System.Drawing.Point(357, 106)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(69, 20)
+        Me.Label7.TabIndex = 57
+        Me.Label7.Text = "Val unid:"
+        '
+        'txtVal
+        '
+        Me.txtVal.Location = New System.Drawing.Point(428, 105)
+        Me.txtVal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtVal.MaxLength = 30
+        Me.txtVal.Name = "txtVal"
+        Me.txtVal.Size = New System.Drawing.Size(85, 23)
+        Me.txtVal.TabIndex = 52
+        '
+        'cmbFornecedor
+        '
+        Me.cmbFornecedor.FormattingEnabled = True
+        Me.cmbFornecedor.Location = New System.Drawing.Point(105, 65)
+        Me.cmbFornecedor.Name = "cmbFornecedor"
+        Me.cmbFornecedor.Size = New System.Drawing.Size(316, 23)
+        Me.cmbFornecedor.TabIndex = 50
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label6.ForeColor = System.Drawing.Color.Azure
+        Me.Label6.Location = New System.Drawing.Point(9, 66)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 20)
+        Me.Label6.TabIndex = 56
+        Me.Label6.Text = "Fornecedor:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label5.ForeColor = System.Drawing.Color.Azure
+        Me.Label5.Location = New System.Drawing.Point(37, 27)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(66, 20)
+        Me.Label5.TabIndex = 55
+        Me.Label5.Text = "Modelo:"
+        '
+        'txtModelo
+        '
+        Me.txtModelo.Location = New System.Drawing.Point(105, 26)
+        Me.txtModelo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtModelo.MaxLength = 30
+        Me.txtModelo.Name = "txtModelo"
+        Me.txtModelo.Size = New System.Drawing.Size(316, 23)
+        Me.txtModelo.TabIndex = 49
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.ForeColor = System.Drawing.Color.Azure
+        Me.Label4.Location = New System.Drawing.Point(47, 105)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 20)
+        Me.Label4.TabIndex = 54
+        Me.Label4.Text = "Marca:"
+        '
+        'txtMarca
+        '
+        Me.txtMarca.Location = New System.Drawing.Point(105, 104)
+        Me.txtMarca.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtMarca.MaxLength = 30
+        Me.txtMarca.Name = "txtMarca"
+        Me.txtMarca.Size = New System.Drawing.Size(239, 23)
+        Me.txtMarca.TabIndex = 51
+        '
+        'picLogo
+        '
+        Me.picLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
+        Me.picLogo.Location = New System.Drawing.Point(425, 214)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(111, 91)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLogo.TabIndex = 59
+        Me.picLogo.TabStop = False
+        '
         'frmCadastrarProduto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Highlight
-        Me.ClientSize = New System.Drawing.Size(570, 496)
+        Me.ClientSize = New System.Drawing.Size(570, 534)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.picLogo)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtDesc)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.txtVal)
-        Me.Controls.Add(Me.cmbFornecedor)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtModelo)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtMarca)
         Me.Controls.Add(Me.btnAddProduct)
         Me.Controls.Add(Me.btnSaveInfo)
         Me.Controls.Add(Me.btnSearch)
@@ -367,9 +378,11 @@ Partial Class frmCadastrarProduto
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cadastrar/Editar Produtos"
         CType(Me.nudQtd, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -388,17 +401,18 @@ Partial Class frmCadastrarProduto
     Friend WithEvents nudQtd As NumericUpDown
     Friend WithEvents Label3 As Label
     Friend WithEvents cmbCategoria As ComboBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txtMarca As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtModelo As TextBox
-    Friend WithEvents cmbFornecedor As ComboBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtVal As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents txtDesc As TextBox
-    Friend WithEvents picLogo As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents picLogo As PictureBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtDesc As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtVal As TextBox
+    Friend WithEvents cmbFornecedor As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtModelo As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtMarca As TextBox
 End Class
