@@ -1,16 +1,19 @@
 ﻿Imports System.ComponentModel
+Imports Npgsql
 
 Public Class frmHome
+    Dim cont As Integer ' Timer
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If strGrupo_ = "FUNC" Then
             ConfiguraçõesToolStripMenuItem.Visible = False
+            EditarInformaçõesDoProdutoF3ToolStripMenuItem.Visible = False
         End If
         frmChecaCpf.ShowDialog()
-
-
-
-
+        Timer1.Start()
+        Connection() ' Abre a conexão com o banco
+        UpdateSolicitacoes()
+        dvgSolicitacoes.Columns(0).Visible = False
     End Sub
 
     Private Sub CadastrarFuncionárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CadastrarFuncionárioToolStripMenuItem.Click
@@ -43,8 +46,64 @@ Public Class frmHome
         End If
     End Sub
 
+    Private Sub ConsultarHistóricoDeMovimentaçãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultarHistóricoDeMovimentaçãoToolStripMenuItem.Click
+        If IsFormOpen("frmConsultarHistorico") = False Then
+            Call New frmConsultarHistorico() With {.MdiParent = Me}.Show()
+        End If
+    End Sub
+
+    Private Sub MovimentarEstoqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MovimentarEstoqueToolStripMenuItem.Click
+        If IsFormOpen("frmMovimentarEstoque") = False Then
+            Call New frmMovimentarEstoque() With {.MdiParent = Me}.Show()
+        End If
+    End Sub
 
 
+    Private Sub Home_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Login.Close()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If cont > 10 Then
+            cont = 0
+            UpdateSolicitacoes()
+        Else
+            cont += 1
+        End If
+    End Sub
+
+    Public Sub UpdateSolicitacoes()
+        Try
+            cmd = New NpgsqlCommand("SELECT solicitacao_id, nm_setor AS Setor, dt_solicitacao AS Data, hora, nm_maquina AS Máquina, status
+                                         FROM tb_solicitacoes
+                                         WHERE status ='AGUARDANDO'
+                                         ORDER BY dt_solicitacao", con)
+            da = New NpgsqlDataAdapter(cmd)
+            dt = New DataTable
+            da.Fill(dt)
+            dvgSolicitacoes.DataSource = dt
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub dvgSolicitacoes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dvgSolicitacoes.CellDoubleClick
+        Dim index As Integer
+        index = e.RowIndex
+        If index < 0 Then index = 0
+        Dim selectedRow As DataGridViewRow
+        selectedRow = dvgSolicitacoes.Rows(index)
+        IdSolicitacao_ = dvgSolicitacoes.CurrentRow().Cells(0).Value
+        MovimentarEstoqueToolStripMenuItem.PerformClick()
+    End Sub
+
+    Private Sub dvgSolicitacoes_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dvgSolicitacoes.CellFormatting
+        If e.Value IsNot Nothing Then
+            If e.Value.ToString() = "AGUARDANDO" Then
+                e.CellStyle.ForeColor = Color.Blue
+            End If
+        End If
+    End Sub
 
 
 
@@ -108,8 +167,5 @@ Public Class frmHome
     End Sub
     Private Sub ConsultarHistóricoDeMovimentaçãoToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles ConsultarHistóricoDeMovimentaçãoToolStripMenuItem.MouseLeave
         ConsultarHistóricoDeMovimentaçãoToolStripMenuItem.ForeColor = Color.Azure
-    End Sub
-    Private Sub Home_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        Login.Close()
     End Sub
 End Class

@@ -4,7 +4,7 @@ Public Class frmConsultarProdutos
 
     Private Sub frmConsultarProdutos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Connection() 'Preencher Categorias
+            Connection()
             cmd = New NpgsqlCommand("SELECT nm_categoria FROM tb_categorias ORDER BY nm_categoria", con)
             da = New NpgsqlDataAdapter(cmd)
             dt = New DataTable
@@ -181,8 +181,6 @@ Public Class frmConsultarProdutos
                          ORDER BY nm_produto"
         End If
 
-
-
         Try
             Connection()
             cmd = New NpgsqlCommand(SqlFiltro, con)
@@ -196,17 +194,5 @@ Public Class frmConsultarProdutos
         Finally
             con.Close()
         End Try
-
-
-
-
-
-
-
-
-
-
-
-
     End Sub
 End Class

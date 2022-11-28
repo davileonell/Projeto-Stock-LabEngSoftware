@@ -1,6 +1,10 @@
-﻿Imports Npgsql
+﻿Imports System.Buffers
+Imports Npgsql
 
 Public Class frmCadastrarProduto
+
+    Dim qtdAnterior As Integer
+    Dim tipoMovimentacao As String
 
     Private Sub frmCadastrarProduto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -58,6 +62,23 @@ Public Class frmCadastrarProduto
                                                                                   "'," & val & ")", con)
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Produto cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' MOVIMENTAÇÃO DO ESTOQUE
+                    cmd = New NpgsqlCommand("INSERT INTO tb_historico(nm_produto,
+                                                                      qt_movimentacao,
+                                                                      dt_movimentacao,
+                                                                      hora,
+                                                                      qt_quantidadeanterior,
+                                                                      tipomovimentacao,
+                                                                      nm_usuario,
+                                                                      qt_quantidadeatual)
+
+                                            VALUES('" & txtNome.Text &
+                                                 "'," & nudQtd.Value &
+                                                 ",'" & Date.Now.ToShortDateString &
+                                                "','" & Date.Now.ToShortTimeString & "', 0, ENTRADA,'" & strUser_ & "'," & nudQtd.Value & ")", con)
+                    cmd.ExecuteNonQuery()
+
                     CarregarDados()
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -78,6 +99,30 @@ Public Class frmCadastrarProduto
                                                                     vl_produto= " & val & " WHERE produto_id=" & txtID.Text, con)
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Produto atualizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+                    ' MOVIMENTAÇÃO DO ESTOQUE
+                    tipoMovimentacao = IIf(qtdAnterior > nudQtd.Value, "RETIRADA", "ENTRADA")
+                    Dim qtdInserida As Integer
+
+                    qtdInserida = IIf(qtdAnterior > nudQtd.Value, (qtdAnterior - nudQtd.Value), (nudQtd.Value - qtdAnterior))
+
+                    cmd = New NpgsqlCommand("INSERT INTO tb_historico(nm_produto,
+                                                                      qt_movimentacao,
+                                                                      dt_movimentacao,
+                                                                      hora,
+                                                                      qt_quantidadeanterior,
+                                                                      tipomovimentacao,
+                                                                      nm_usuario,
+                                                                      qt_quantidadeatual)
+
+                                            VALUES('" & txtNome.Text &
+                                                 "'," & qtdInserida &
+                                                 ",'" & Date.Now.ToShortDateString &
+                                                "','" & Date.Now.ToShortTimeString &
+                                                "'," & qtdAnterior & ",'" & tipoMovimentacao & "','" & strUser_ & "'," & nudQtd.Value & ")", con)
+                    cmd.ExecuteNonQuery()
+
                     CarregarDados()
                 Catch ex As Exception
                     MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -85,7 +130,6 @@ Public Class frmCadastrarProduto
                     con.Close()
                 End Try
             End If
-
         Else
             MessageBox.Show("Preencha as informações obrigatórias!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
@@ -154,6 +198,7 @@ Public Class frmCadastrarProduto
                 cmbFornecedor.Text = dr.Item("nm_fornecedor")
                 nudQtd.Value = dr.Item("qt_produto")
                 txtID.Text = dr.Item("produto_id")
+                qtdAnterior = dr.Item("qt_produto") ' VARIÁVEL PARA CONTROLAR ESTOQUE
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -179,6 +224,7 @@ Public Class frmCadastrarProduto
             cmbFornecedor.Text = dr.Item("nm_fornecedor")
             nudQtd.Value = dr.Item("qt_produto")
             txtID.Text = dr.Item("produto_id")
+            qtdAnterior = dr.Item("qt_produto") ' VARIÁVEL PARA CONTROLAR ESTOQUE
         Else
             MessageBox.Show("Você chegou ao limite!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
@@ -203,6 +249,7 @@ Public Class frmCadastrarProduto
                 cmbFornecedor.Text = dr.Item("nm_fornecedor")
                 nudQtd.Value = dr.Item("qt_produto")
                 txtID.Text = dr.Item("produto_id")
+                qtdAnterior = dr.Item("qt_produto") ' VARIÁVEL PARA CONTROLAR ESTOQUE
             End If
 
         Catch ex As Exception
@@ -217,7 +264,7 @@ Public Class frmCadastrarProduto
         e.Handled = True
     End Sub
 
-    Private Sub cmbFornecedor_KeyPress(sender As Object, e As KeyPressEventArgs)
+    Private Sub cmbFornecedor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbFornecedor.KeyPress
         e.Handled = True
     End Sub
 
@@ -237,15 +284,19 @@ Public Class frmCadastrarProduto
         txtNome.Text = CancApostofro(txtNome)
     End Sub
 
-    Private Sub txtVal_KeyPress(sender As Object, e As KeyPressEventArgs)
-        Dim keyAscii As Short = CShort(Asc(e.KeyChar))
-
-        keyAscii = CShort(JustMoney(keyAscii))
-
-        If keyAscii = 0 Then e.Handled = True
+    Private Sub txtDesc_TextChanged_1(sender As Object, e As EventArgs) Handles txtDesc.TextChanged
+        txtDesc.Text = CancApostofro(txtDesc)
     End Sub
 
-    Private Sub txtVal_KeyDown(sender As Object, e As KeyEventArgs)
+    Private Sub txtModelo_TextChanged_1(sender As Object, e As EventArgs) Handles txtModelo.TextChanged
+        txtModelo.Text = CancApostofro(txtModelo)
+    End Sub
+
+    Private Sub txtMarca_TextChanged_1(sender As Object, e As EventArgs) Handles txtMarca.TextChanged
+        txtMarca.Text = CancApostofro(txtMarca)
+    End Sub
+
+    Private Sub txtVal_KeyDown(sender As Object, e As KeyEventArgs) Handles txtVal.KeyDown
         If e.KeyCode = Keys.Back Then
             If txtVal.TextLength > 0 Then
                 Dim tamanho = txtVal.TextLength
@@ -253,5 +304,13 @@ Public Class frmCadastrarProduto
                 SendKeys.Send("{END}")
             End If
         End If
+    End Sub
+
+    Private Sub txtVal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtVal.KeyPress
+        Dim keyAscii As Short = CShort(Asc(e.KeyChar))
+
+        keyAscii = CShort(JustMoney(keyAscii))
+
+        If keyAscii = 0 Then e.Handled = True
     End Sub
 End Class

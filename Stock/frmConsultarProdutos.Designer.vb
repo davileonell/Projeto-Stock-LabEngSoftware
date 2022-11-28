@@ -47,7 +47,7 @@ Partial Class frmConsultarProdutos
         Me.dvgProdutos.AllowUserToResizeRows = False
         Me.dvgProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dvgProdutos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        Me.dvgProdutos.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dvgProdutos.BackgroundColor = System.Drawing.Color.MidnightBlue
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)

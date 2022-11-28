@@ -40,6 +40,7 @@ Partial Class frmCadastrarProduto
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtDesc = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -50,7 +51,6 @@ Partial Class frmCadastrarProduto
         Me.txtModelo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtMarca = New System.Windows.Forms.TextBox()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         CType(Me.nudQtd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -243,6 +243,17 @@ Partial Class frmCadastrarProduto
         Me.GroupBox2.TabIndex = 51
         Me.GroupBox2.TabStop = False
         '
+        'picLogo
+        '
+        Me.picLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
+        Me.picLogo.Location = New System.Drawing.Point(425, 214)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(111, 91)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLogo.TabIndex = 59
+        Me.picLogo.TabStop = False
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -342,17 +353,6 @@ Partial Class frmCadastrarProduto
         Me.txtMarca.Name = "txtMarca"
         Me.txtMarca.Size = New System.Drawing.Size(239, 23)
         Me.txtMarca.TabIndex = 51
-        '
-        'picLogo
-        '
-        Me.picLogo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
-        Me.picLogo.Location = New System.Drawing.Point(425, 214)
-        Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(111, 91)
-        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLogo.TabIndex = 59
-        Me.picLogo.TabStop = False
         '
         'frmCadastrarProduto
         '
