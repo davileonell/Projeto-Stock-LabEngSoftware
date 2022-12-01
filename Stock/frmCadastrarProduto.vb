@@ -42,6 +42,7 @@ Public Class frmCadastrarProduto
             Dim val As String = Trim(txtVal.Text.Replace(",", "."))
 
             If txtID.Text = "" Then 'INSERT
+                If val Is "" Then val = 0
 
                 Try
                     Connection()
@@ -59,7 +60,7 @@ Public Class frmCadastrarProduto
                                                                                  "','" & Trim(txtModelo.Text) &
                                                                                  "','" & Trim(txtDesc.Text) &
                                                                                  "','" & cmbFornecedor.Text &
-                                                                                  "'," & val & ")", con)
+                                                                                  "','" & val & "')", con)
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Produto cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -76,7 +77,7 @@ Public Class frmCadastrarProduto
                                             VALUES('" & txtNome.Text &
                                                  "'," & nudQtd.Value &
                                                  ",'" & Date.Now.ToShortDateString &
-                                                "','" & Date.Now.ToShortTimeString & "', 0, ENTRADA,'" & strUser_ & "'," & nudQtd.Value & ")", con)
+                                                "','" & Date.Now.ToShortTimeString & "', 0, 'ENTRADA','" & strUser_ & "'," & nudQtd.Value & ")", con)
                     cmd.ExecuteNonQuery()
 
                     CarregarDados()

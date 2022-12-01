@@ -12,8 +12,8 @@ Public Class frmConsultarHistorico
         If histSolicitacao_ = True Then
             strsql = "SELECT nm_setor AS Setor, nm_maquina AS Máquina, dt_solicitacao AS Data, hora, status
                       FROM tb_solicitacoes
-                      WHERE dt_solicitacao BETWEEN '" & dtpDataInicial.Value & "' AND '" & dtpDataFinal.Value & "'
-                      ORDER BY dt_solicitacao"
+                      WHERE dt_solicitacao >='" & dtpDataInicial.Value.ToShortDateString & "' AND dt_solicitacao <='" & dtpDataFinal.Value.ToShortDateString & "'
+                      ORDER BY solicitacao_id DESC"
 
         Else
             strsql = "SELECT nm_produto AS Produto,
@@ -24,7 +24,7 @@ Public Class frmConsultarHistorico
                                             tipomovimentacao AS Movimentação,
                                             nm_usuario AS Usuário
                      FROM tb_historico
-                     WHERE dt_movimentacao BETWEEN '" & dtpDataInicial.Value & "' AND '" & dtpDataFinal.Value & "'ORDER BY dt_movimentacao"
+                     WHERE dt_movimentacao >='" & dtpDataInicial.Value.ToShortDateString & "' AND dt_movimentacao <='" & dtpDataFinal.Value.ToShortDateString & "'ORDER BY historico_id DESC"
         End If
 
         Try

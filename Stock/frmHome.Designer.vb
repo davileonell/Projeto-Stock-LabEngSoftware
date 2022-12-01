@@ -168,9 +168,9 @@ Partial Class frmHome
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1183, 573)
+        Me.Controls.Add(Me.mnsHome)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.dvgSolicitacoes)
-        Me.Controls.Add(Me.mnsHome)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.mnsHome
