@@ -108,7 +108,8 @@ Public Class frmCadastrarProduto
 
                     qtdInserida = IIf(qtdAnterior > nudQtd.Value, (qtdAnterior - nudQtd.Value), (nudQtd.Value - qtdAnterior))
 
-                    cmd = New NpgsqlCommand("INSERT INTO tb_historico(nm_produto,
+                    If qtdInserida > 0 Then ' EVITAR CAIR NO HISTÓRICO DE MOVIMENTAÇÃO ALTERAÇÕES DE INFORMAÇÕES DO PRODUTO
+                        cmd = New NpgsqlCommand("INSERT INTO tb_historico(nm_produto,
                                                                       qt_movimentacao,
                                                                       dt_movimentacao,
                                                                       hora,
@@ -122,7 +123,8 @@ Public Class frmCadastrarProduto
                                                  ",'" & Date.Now.ToShortDateString &
                                                 "','" & Date.Now.ToShortTimeString &
                                                 "'," & qtdAnterior & ",'" & tipoMovimentacao & "','" & strUser_ & "'," & nudQtd.Value & ")", con)
-                    cmd.ExecuteNonQuery()
+                        cmd.ExecuteNonQuery()
+                    End If
 
                     CarregarDados()
                 Catch ex As Exception
@@ -137,11 +139,15 @@ Public Class frmCadastrarProduto
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        btnBack.Enabled = False
         Botoes("SELECT * FROM tb_produtos WHERE nm_produto < '" & txtNome.Text & "' ORDER BY nm_produto LIMIT 1")
+        btnBack.Enabled = True
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        btnNext.Enabled = False
         Botoes("SELECT * FROM tb_produtos WHERE nm_produto > '" & txtNome.Text & "' ORDER BY nm_produto LIMIT 1")
+        btnNext.Enabled = True
     End Sub
 
     Private Sub btnAddProduct_Click(sender As Object, e As EventArgs) Handles btnAddProduct.Click
@@ -308,9 +314,9 @@ Public Class frmCadastrarProduto
     End Sub
 
     Private Sub txtVal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtVal.KeyPress
-        Dim keyAscii As Short = CShort(Asc(e.KeyChar))
+        Dim keyAscii As Short = AscW(e.KeyChar)
 
-        keyAscii = CShort(JustMoney(keyAscii))
+        keyAscii = JustMoney(keyAscii)
 
         If keyAscii = 0 Then e.Handled = True
     End Sub

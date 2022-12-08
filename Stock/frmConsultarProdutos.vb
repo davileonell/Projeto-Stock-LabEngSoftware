@@ -179,6 +179,19 @@ Public Class frmConsultarProdutos
             SqlFiltro = "SELECT nm_produto AS Nome, qt_produto AS Qtde, nm_categoria AS Categoria, marca, modelo, nm_fornecedor AS Fornecedor, vl_produto AS Valor
                          FROM tb_produtos 
                          ORDER BY nm_produto"
+
+        ElseIf chkCategoria.Checked = False And chkFornecedor.Checked = True And chkMarca.Checked = True And chkNome.Checked = False Then
+            SqlFiltro = "SELECT nm_produto AS Nome, qt_produto AS Qtde, nm_categoria AS Categoria, marca, modelo, nm_fornecedor AS Fornecedor, vl_produto AS Valor
+                         FROM tb_produtos
+                         WHERE marca ilike '" & txtMarca.Text &
+                     "%' AND nm_fornecedor='" & cmbFornecedor.Text &
+                      "' ORDER BY nm_produto"
+
+        ElseIf chkCategoria.Checked = True And chkFornecedor.Checked = False And chkMarca.Checked = False And chkNome.Checked = True Then
+            SqlFiltro = "SELECT nm_produto AS Nome, qt_produto AS Qtde, nm_categoria AS Categoria, marca, modelo, nm_fornecedor AS Fornecedor, vl_produto AS Valor
+                         FROM tb_produtos
+                         WHERE nm_produto ilike '" & txtNome.Text &
+                     "%' AND nm_categoria='" & cmbCategoria.Text & "' ORDER BY nm_produto"
         End If
 
         Try
@@ -194,5 +207,23 @@ Public Class frmConsultarProdutos
         Finally
             con.Close()
         End Try
+    End Sub
+
+    Private Sub cmbCategoria_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbCategoria.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub cmbFornecedor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbFornecedor.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub txtMarca_TextChanged(sender As Object, e As EventArgs) Handles txtMarca.TextChanged
+        txtMarca.Text = txtMarca.Text.Replace("'", "´")
+        SendKeys.Send("{END}")
+    End Sub
+
+    Private Sub txtNome_TextChanged(sender As Object, e As EventArgs) Handles txtNome.TextChanged
+        txtNome.Text = txtNome.Text.Replace("'", "´")
+        SendKeys.Send("{END}")
     End Sub
 End Class

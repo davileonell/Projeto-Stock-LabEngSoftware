@@ -28,13 +28,13 @@ Public Class frmSolicitar
         End Try
 
         UpdateSolicitacoes() ' Atualizar solcitações
-        dvgSolicitacoes.Columns(0).Visible = False
+        'dvgSolicitacoes.Columns(0).Visible = False
         BuscarItens()
     End Sub
 
     Public Sub UpdateSolicitacoes()
         Try
-            cmd = New NpgsqlCommand("SELECT num_solicitacao, nm_setor AS Setor, dt_solicitacao AS Data, hora, status
+            cmd = New NpgsqlCommand("SELECT num_solicitacao AS Pedido, nm_setor AS Setor, dt_solicitacao AS Data, hora, status
                                          FROM tb_solicitacoes
                                          WHERE status='AGUARDANDO' or status='DISPONÍVEL' AND nm_maquina='" & My.Computer.Name & "' 
                                          ORDER BY dt_solicitacao DESC", con)
@@ -332,5 +332,18 @@ Public Class frmSolicitar
     End Sub
     Private Sub dvgLista_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles dvgLista.RowsRemoved
         CountProdutos_ -= 1
+    End Sub
+
+    Private Sub cmbCategoria_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbCategoria.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub cmbSetor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmbSetor.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub txtNome_TextChanged(sender As Object, e As EventArgs) Handles txtNome.TextChanged
+        txtNome.Text = txtNome.Text.Replace("'", "´")
+        SendKeys.Send("{END}")
     End Sub
 End Class

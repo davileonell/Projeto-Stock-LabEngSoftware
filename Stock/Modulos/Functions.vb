@@ -20,10 +20,12 @@
     End Function
 
     Public Function JustMoney(ByVal Keyascii As Short) As Short
-        If InStr("1234567890,.", Chr(Keyascii)) = 0 Then
-            JustMoney = 0
-        Else
-            JustMoney = Keyascii
+        If Keyascii <> 231 And Keyascii <> 180 Then
+            If InStr("1234567890,.", Chr(Keyascii)) = 0 Then
+                JustMoney = 0
+            Else
+                JustMoney = Keyascii
+            End If
         End If
     End Function
 End Module

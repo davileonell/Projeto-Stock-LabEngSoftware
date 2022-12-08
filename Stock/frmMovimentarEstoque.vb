@@ -17,7 +17,7 @@ Public Class frmMovimentarEstoque
         Connection()
         BuscarItens()
         UpdateSolicitacoes() ' Atualizar solcitações
-        dvgSolicitacoes.Columns(0).Visible = False
+        'dvgSolicitacoes.Columns(0).Visible = False
     End Sub
 
     Private Sub frmMovimentarEstoque_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -40,7 +40,7 @@ Public Class frmMovimentarEstoque
 
     Public Sub UpdateSolicitacoes()
         Try
-            cmd = New NpgsqlCommand("SELECT num_solicitacao, nm_setor AS Setor, dt_solicitacao AS Data, hora, nm_maquina AS Máquina, status
+            cmd = New NpgsqlCommand("SELECT num_solicitacao AS Pedido, nm_setor AS Setor, dt_solicitacao AS Data, hora, nm_maquina AS Máquina, status
                                          FROM tb_solicitacoes
                                          WHERE status='AGUARDANDO' or status='DISPONÍVEL' 
                                          ORDER BY dt_solicitacao DESC", con)

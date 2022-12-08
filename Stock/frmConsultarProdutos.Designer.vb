@@ -60,6 +60,7 @@ Partial Class frmConsultarProdutos
         Me.dvgProdutos.Location = New System.Drawing.Point(468, 12)
         Me.dvgProdutos.MultiSelect = False
         Me.dvgProdutos.Name = "dvgProdutos"
+        Me.dvgProdutos.ReadOnly = True
         Me.dvgProdutos.RowHeadersVisible = False
         Me.dvgProdutos.RowTemplate.Height = 25
         Me.dvgProdutos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical

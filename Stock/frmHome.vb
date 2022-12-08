@@ -149,9 +149,7 @@ Public Class frmHome
         ConfiguraçõesToolStripMenuItem.ForeColor = Color.Black
     End Sub
     Private Sub ConfiguraçõesToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles ConfiguraçõesToolStripMenuItem.MouseLeave
-        If ConfiguraçõesToolStripMenuItem.DropDown.Visible = False Then
-            ConfiguraçõesToolStripMenuItem.ForeColor = Color.Azure
-        End If
+        If ConfiguraçõesToolStripMenuItem.DropDown.Visible = False Then ConfiguraçõesToolStripMenuItem.ForeColor = Color.Azure
     End Sub
     Private Sub ConfiguraçõesToolStripMenuItem_DropDownOpening(sender As Object, e As EventArgs) Handles ConfiguraçõesToolStripMenuItem.DropDownOpening
         ConfiguraçõesToolStripMenuItem.ForeColor = Color.Black
@@ -167,5 +165,29 @@ Public Class frmHome
     End Sub
     Private Sub ConsultarHistóricoDeMovimentaçãoToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles ConsultarHistóricoDeMovimentaçãoToolStripMenuItem.MouseLeave
         ConsultarHistóricoDeMovimentaçãoToolStripMenuItem.ForeColor = Color.Azure
+    End Sub
+
+    Private Sub CadastrarEditarFornecedorToolStripMenuItem_MouseEnter(sender As Object, e As EventArgs) Handles CadastrarEditarFornecedorToolStripMenuItem.MouseEnter
+        CadastrarEditarFornecedorToolStripMenuItem.ForeColor = Color.Black
+    End Sub
+
+    Private Sub CadastrarEditarFornecedorToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles CadastrarEditarFornecedorToolStripMenuItem.MouseLeave
+        CadastrarEditarFornecedorToolStripMenuItem.ForeColor = Color.Azure
+    End Sub
+
+    Private Sub MovimentarEstoqueToolStripMenuItem_MouseEnter(sender As Object, e As EventArgs) Handles MovimentarEstoqueToolStripMenuItem.MouseEnter
+        MovimentarEstoqueToolStripMenuItem.ForeColor = Color.Black
+    End Sub
+
+    Private Sub MovimentarEstoqueToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles MovimentarEstoqueToolStripMenuItem.MouseLeave
+        MovimentarEstoqueToolStripMenuItem.ForeColor = Color.Azure
+    End Sub
+
+    Private Sub CadastrarEditarCategoriaToolStripMenuItem_MouseEnter(sender As Object, e As EventArgs) Handles CadastrarEditarCategoriaToolStripMenuItem.MouseEnter
+        CadastrarEditarCategoriaToolStripMenuItem.ForeColor = Color.Black
+    End Sub
+
+    Private Sub CadastrarEditarCategoriaToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles CadastrarEditarCategoriaToolStripMenuItem.MouseLeave
+        CadastrarEditarCategoriaToolStripMenuItem.ForeColor = Color.Azure
     End Sub
 End Class
